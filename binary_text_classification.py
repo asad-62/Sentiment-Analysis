@@ -37,9 +37,7 @@ test_x_vector = tfidf.transform(test_x)
 svc = SVC(kernel='linear')
 svc.fit(train_x_vector, train_y)
 
-### with naive bais
-gnb = GaussianNB()
-gnb.fit(train_x_vector.toarray(), train_y)
+
 
 log_reg = LogisticRegression()
 log_reg.fit(train_x_vector, train_y)
@@ -48,7 +46,6 @@ svc.score(test_x_vector, test_y)
 
 print("SVM ACCURACY",svc.score(test_x_vector, test_y))
 
-gnb.score(test_x_vector.toarray(), test_y)
 log_reg.score(test_x_vector, test_y)
 
 print(classification_report(test_y, 
