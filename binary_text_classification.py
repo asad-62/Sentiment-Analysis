@@ -56,11 +56,4 @@ conf_mat = confusion_matrix(test_y,
                             svc.predict(test_x_vector), 
                             labels=['positive', 'negative'])
 
-parameters = {'C': [1,4,8,16,32] ,'kernel':['linear', 'rbf']}
-svc = SVC()
-svc_grid = GridSearchCV(svc,parameters, cv=5)
 
-svc_grid.fit(train_x_vector, train_y)
-
-print(svc_grid.best_params_)
-print(svc_grid.best_estimator_)
